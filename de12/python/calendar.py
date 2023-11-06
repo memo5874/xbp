@@ -40,7 +40,7 @@ class longtimeholiday2(jph.OriginalHoliday):
 
     def _is_holiday_name(self, date):
         return "春休み期間開始or終了"
-class longtime3(jph.OriginalHoliday):
+class lomgtime3(jph.OriginalHoliday):
     def _is_holiday(self, date):
         if date.year == 2024 and date.month == 1 and date.day == 22:
             return True
@@ -52,6 +52,6 @@ class longtime3(jph.OriginalHoliday):
         return "テスト期間開始or終了"
 #指定する範囲
 from_day = datetime.date(2023, 1, 1)
-to_day = datetime.date(2024, 4, 20)
+to_day = datetime.date(2024, 4, 1)
 result = jph.between(from_day, to_day)
 print(f' {from_day.strftime("%Y/%m/%d")}{to_day.strftime("%Y/%m/%d")}:{result}')
