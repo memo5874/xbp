@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>ソースコード（カレンダー）</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <code>
+        <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+        <li style="background-color:#EFF;">#時計</li>
+        <li style="background-color:#EEF;">import jpholiday as jph</li>
+        <li style="background-color:#EFF;">from datetime import datetime</li>
+        <li style="background-color:#EEF;">t = datetime.now()</li>
+        <li style="background-color:#EFF;">print(t)</li>
+        <li style="background-color:#EEF;">#datetimeオブジェクトは日付をyear,month,dayそして時間をhour,minute,second,microsecondで示す</li>
+        <li style="background-color:#EFF;">print(t.weekday())</li>
+        <li style="background-color:#EEF;">#weekdayは0〜6の数字で表され、月〜日と対応している</li>
+        <li style="background-color:#EFF;">result = jph.year_holidays(2023)</li>
+        <li style="background-color:#EEF;">print(result)</li>
+        <li style="background-color:#EFF;">#年間の祝日がわかる（使用するときはその年の年度に合わせる必要がある）</li>
+        </ol></code>   
+</body>
+
+</html>
