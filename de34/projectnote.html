@@ -10,8 +10,35 @@
 <img src="./images/最終プロジェクト下書き.jpg" width="40%">
 </div>
 <div>必要なもの:タイヤ、モーター、レール、アーム、aruduino、吊り下げ機<br>
-購入品:<a href="https://www.amazon.co.jp/dp/B07LBRNZB6/ref=cm_sw_r_as_gl_apa_glt_i_22YVGX0MPRA31DP897T5?linkCode=ml1&tag=tinterdigit0c-22">モーター</a><br>
+購入品:<a href="https://www.amazon.co.jp/dp/B07LBRNZB6/ref=cm_sw_r_as_gl_apa_glt_i_22YVGX0MPRA31DP897T5?linkCode=ml1&tag=tinterdigit0c-22">モーター類</a><br>
 タイヤは当初購入しようと考えていたが3Dプリンタで製作しようと考え中（TPUなどを使って</div>
+<h3>実行予定のaruduinoスケッチ</h3>
+<div>#include <Stepper.h><br>
+
+    const int stepsPerRevolution = 2048;  // モーターのステップ数（28BYJ-48の場合）<br>
+    
+    // 4つの制御ピン<br>
+    Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);<br>
+    
+    void setup() {<br>
+      // モーターの速度設定<br>
+      myStepper.setSpeed(15);  // RPM（回転数）<br>
+      // シリアル通信の開始<br>
+      Serial.begin(9600);<br>
+    }<br>
+    
+    void loop() {<br>
+      // 1回転（時計回り）<br>
+      Serial.println("clockwise");<br>
+      myStepper.step(stepsPerRevolution);<br>
+      delay(1000);<br>
+    
+      // 1回転（反時計回り）<br>
+      Serial.println("counterclockwise");<br>
+      myStepper.step(-stepsPerRevolution);<br>
+      delay(1000);<br>
+    }<br>
+    </div>
 
 
     
